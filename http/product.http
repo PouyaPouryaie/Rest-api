@@ -1,0 +1,33 @@
+### Find all Products
+GET http://localhost:8080/api/products
+
+### Create new Product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "mattress",
+  "price": 1500.0,
+  "description": "tools of bedrooms"
+}
+
+### Update existing Product by id
+PUT http://localhost:8080/api/products/52
+Content-Type: application/json
+
+{
+  "name": "mattress",
+  "price": 1700.0,
+  "description": "tools of bedrooms"
+}
+
+### Update existing Product by id
+PATCH http://localhost:8080/api/products/52
+Content-Type: application/json
+
+{
+  "price": 1350.0
+}
+
+### delete existing Product by id
+DELETE http://localhost:8080/api/products/52
