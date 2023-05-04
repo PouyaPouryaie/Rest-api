@@ -35,7 +35,7 @@ public class ProductController {
         try {
             return ResponseEntity.status(HttpStatus.CREATED).body(productService.createProduct(product));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("data not created");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(String.format("data not created because of %s", e.getMessage()));
         }
     }
 

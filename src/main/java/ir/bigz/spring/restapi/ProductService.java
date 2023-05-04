@@ -21,7 +21,7 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product getProductById(long id) throws Exception {
+    public Product getProductById(Long id) throws Exception {
         return productRepository.findById(id).orElseThrow(() -> new Exception("data not found"));
     }
 
@@ -30,7 +30,7 @@ public class ProductService {
             return productRepository.save(product);
         }
 
-        throw new Exception("data not created");
+        throw new Exception("name must be fill out");
     }
 
     public Product updateProduct(Long id, Product product) throws Exception {
@@ -61,7 +61,7 @@ public class ProductService {
     }
 
     private boolean validateFields(Product product){
-        return Objects.nonNull(product.getName());
+        return Objects.nonNull(product.getName()) && !product.getName().equals("");
     }
 
     private void mapSourceToTarget(Product source, Product target){
